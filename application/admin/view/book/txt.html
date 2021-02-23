@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title></title>
+		<meta charset="UTF-8" />
+<!-- <link rel="stylesheet" type="text/css" href="__CSS__/sc.css">
+ --><link rel="stylesheet" type="text/css" href="__CSS__/mulu.css">
+
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
+
+	</head>
+
+	<body>
+		<div class="header">
+		<div class="header_logo">
+				<a href="{:url('admin/Book/shuji')}" class="feng">枫阅读</a>
+			<img src="__STATIC__/logo.jpg" width="5%" height="5%">
+			
+		<div class="header_search"><form action="{:url('admin/Book/sou')}" method="get">
+			<input type="txt" name="name" class="txt">
+			<input type="submit" value="搜索" class="submit" />
+		</form></div>
+		<div class="zhuangtai">
+	{if session('yhid')}
+
+{:session('name')}&nbsp
+<a href="{:url('index/Booka/yhsc')}">上传书籍</a>
+<a href="{:url('index/Index/data')}">修改密码</a>
+<a href="{:url('admin/Book/bookjia')}">我的书架    </a>
+<a href="{:url('index/Index/delete')}">注销</a>
+{elseif session('userid')}
+	
+	
+
+{:session('name')}
+
+
+<a href="{:url('admin/Book/bookjia')}">我的书架    </a>
+	<a href="{:url('admin/User/index')}">管理员首页   </a>	
+	<a href="{:url('admin/User/delete1')}">注销</a>
+	{else/}
+	<a href="{:url('index/Index/denglu')}">登陆</a>
+	<a href="{:url('index/Yh/zuce')}">注册</a>
+
+{/if}</div>
+	</div>
+		
+	
+
+		</div>
+	
+	<!-- 	{if session('yhid')} {:session('name')} 
+		<a href="{:url('admin/Book/bookjia')}">我的书架    </a>
+	<a href="{:url('admin/User/delete')}">退出</a>
+{/if}{if session('userid')} {:session('name')} 
+<a href="{:url('admin/Book/bookjia')}">我的书架    </a>
+	<a href="{:url('admin/User/delete1')}">退出</a>
+{/if} -->
+		
+		<div class="nav">
+			<ul>
+				<li>
+						<a href="{:url('index/index/index')}">首页</a>
+				</li>
+				<li>
+					<a href="{:url('admin/Book/shuji')}">书库</a>
+				</li>
+				<li>
+					<a href="{:url('admin/Book/type',['type'=>'都市'])}">都市</a>
+				</li>
+				<li>
+					<a href="{:url('admin/Book/type',['type'=>'玄幻'])}">玄幻</a>
+				</li>
+				<li>
+					<a href="{:url('admin/Book/type',['type'=>'名著'])}">名著</a>
+				</li>
+				<li>
+					<a href="{:url('admin/Book/type',['type'=>'历史'])}">历史</a>
+				</li>
+				<li>
+					<a href="{:url('admin/Book/type',['type'=>'武侠'])}">武侠</a>
+				</li>
+			</ul>
+		</div>
+		
+		
+<div class="box_con">
+			<div class="con_top">
+				<a href="{:url('index/index/index')}">枫阅读</a> &gt; {$message.name}
+			</div>
+				{if condition= "$message.image neq ''"}
+	<img src="{$message.image}"  width="120" height="150">
+	{else /}<img src="__STATIC__/1.jpg" width="120" height="150">
+	{/if}
+<div id="maininfo">
+
+			<div id="info">
+				<h1>{$message.name}</h1>
+				<br>
+				<p>作&nbsp;&nbsp;&nbsp;&nbsp;者：{$message.zz}</p>
+
+				<p>类别：{$message.type}</p>
+				<p><a href="{:url('admin/Book/flash',['id'=>0,'name'=>$message.name])}">开始阅读</a></p>
+				<p><a href="{:url('admin/Book/shujia',['bookname'=>$message.name])}">加入书架</a></p>
+				<p class="imgdian"><a href="{:url('admin/Book/dianzan',['bookname'=>$message.name])}">
+					<img src="__STATIC__/01.jpg" width="20" height="20"></a></p>
+			
+			<p>{if condition="($dian eq 0)"} 
+						暂无点赞
+						
+					{else /}
+			点赞数：{$dian}
+			{/if}</p>
+</div>
+				<div id="intro">
+					{$message.jj}
+				</div>
+				<div id="sidebar">
+					
+				
+						
+					
+							<div id="listtj"></div>
+
+				</div>
+
+				<div id="listtj"></div>
+			</div>
+</div>
+
+			<div class="nav1">
+				<p class="mulu">{$message.name}目录</p>
+				<ul>
+						<li >{volist name='z' id='z'}
+							<a href="{:url('admin/Book/flash',['id'=>$key-1,'name'=>$message.name])}">第{$key}章{$z}</a> {/volist}
+				
+				
+						</li>
+						</ul>
+</div>
+
+			<div class="nav2">
+				
+			{if condition="($pid eq 0)"} 
+					<div style="text-align: center;">	暂无评论
+						</div>
+					{else /}
+			
+				
+						
+
+	
+		
+		<div class="box2">
+   
+    <ul>
+        <li class="li">
+            <div class="com">
+                {volist name='pna' id='pna'}
+		{$pna}:
+
+			<br>
+				{/volist}
+            </div>
+        </li>
+        <li>
+            <div class="com">
+            {volist name='plunc' id='plunc'}
+			{$plunc}	<br>
+				{/volist}
+            </div>
+        </li>
+        <li class="li">
+            <div class="com">
+              {volist name='plunt' id='plunt'}
+			{$plunt}<br>
+			{/volist}
+            </div>
+        </li>
+       
+    </ul>			
+{/if}	
+					
+		</div>		
+			
+					
+					
+				
+					
+			
+					
+				
+
+				</div>
+						
+					<br>
+					<div class="nav3">	
+				我要评论	
+			<form action="{:url('admin/Pinglun/plun',['id'=>$message.id,'name'=>$message.name])}" method="post">
+				内容：	<input type="txt" name="content" style="width: 55%">
+			<input type="submit" value="评论" />
+		</form>
+				</div>	
+				</div>
+
+
+<div class="footer">
+	      枫阅读所有小说均来自网上以及网友上传，与本站立场无关版权归原作者和出版社所有。阅读者如发现作品内容确有与法律抵触之处，可向本站举报。倡导文明阅读，绿色网络，从我做起，如发现侵权、非法、色情类小说,发送邮件给:<a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=1764928384@qq.com">管理员</a> 删除！
+</div>
+	</body>
+
+</html>

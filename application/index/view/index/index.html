@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="__CSS__/mulu.css">
+<link rel="stylesheet" type="text/css" href="__CSS__/index.css">
+	</head>
+	<body >
+		<div class="header">
+		<div class="header_logo">
+				<a href="{:url('admin/Book/shuji')}" class="feng">枫阅读</a>
+			<img src="__STATIC__/logo.jpg" width="5%" height="5%">
+			
+		<div class="header_search"><form action="{:url('admin/Book/sou')}" method="get">
+			<input type="txt" name="name" class="txt">
+			<input type="submit" value="搜索" class="submit" />
+		</form></div>
+		<div class="zhuangtai">
+	{if session('yhid')}
+
+{:session('name')}&nbsp
+<a href="{:url('index/Booka/yhsc')}">上传书籍</a>
+<a href="{:url('index/Index/data')}">修改密码</a>
+<a href="{:url('admin/Book/bookjia')}">我的书架    </a>
+<a href="{:url('index/Index/delete')}">注销</a>
+{elseif session('userid')}
+{:session('name')}
+<a href="{:url('admin/Book/bookjia')}">我的书架    </a>
+	<a href="{:url('admin/User/index')}">管理员首页   </a>	
+	<a href="{:url('admin/User/delete1')}">注销</a>
+	{else/}
+	<a href="{:url('index/Index/denglu')}">登陆</a>
+	<a href="{:url('index/Yh/zuce')}">注册</a>
+
+{/if}</div>
+	</div>
+		</div>	
+		<div class="nav">
+			<ul>
+				<li>
+						<a href="{:url('index/index/index')}">首页</a>
+				</li>
+				<li>
+					<a href="{:url('admin/Book/shuji')}">书库</a>
+				</li>
+				<li>
+					<a href="{:url('admin/Book/type',['type'=>'都市'])}">都市</a>
+				</li>
+				<li>
+					<a href="{:url('admin/Book/type',['type'=>'玄幻'])}">玄幻</a>
+				</li>
+				<li>
+					<a href="{:url('admin/Book/type',['type'=>'名著'])}">名著</a>
+				</li>
+				<li>
+					<a href="{:url('admin/Book/type',['type'=>'历史'])}">历史</a>
+				</li>
+				<li>
+					<a href="{:url('admin/Book/type',['type'=>'武侠'])}">武侠</a>
+				</li>
+			</ul>
+		</div>
+		<div class="nav7">
+
+<div class="left">
+          <div class="lside side-box"> 
+            <h2>点赞排行榜</h2> 
+            <ul class="dph2">
+            	<div class="r">  
+          {volist name='data' id='da'}	
+  	         	
+    <li class="orgNum ">
+    <font>{$key+1}</font>
+      <u><em>{$da.zz}</em><a href="{:url('admin/Book/txt',['name'=>$da.name])}">{$da.name}</a></u>
+            </li>
+            {/volist}	
+             
+                   </ul> 
+          
+
+          </div>
+      <div class="lside side-box" > 
+            <h2>热门排行榜</h2> 
+            <ul class="dph2">
+            	  
+          {volist name='pun' id='pun'}	
+  	         	
+    <li class="orgNum ">
+    
+    <font>{$key+1}</font>
+      <u><em>{$pun.zz}</em><a href="{:url('admin/Book/txt',['name'=>$pun.name])}">{$pun.name}</a></u>
+            </li>
+            {/volist}	
+             
+                   </ul> 
+        
+        </div>
+      </div>
+       <div id="newscontent">
+              	网站推荐    
+                                        
+   	{volist name='xh' id='xh'}	
+
+				
+<li><span class="s1">
+&nbsp[{$xh.type}]
+</span><span class="s2">
+    <a href="{:url('admin/Book/txt',['name'=>$xh.name])}">  {$xh.name}</a></span><span class="s3">
+    {$xh.jj}</span><span   class="s4">
+      {$xh.zz}
+      
+      </span></li>
+	
+            
+  
+                   
+             
+
+	{/volist}
+               
+                 
+          
+	
+        
+   	{volist name='ds' id='ds'}	
+
+				
+
+	
+<li><span class="s1">
+ &nbsp[{$ds.type}]</span><span class="s2">
+      <a href="{:url('admin/Book/txt',['name'=>$ds.name])}">{$ds.name}</a></span><span class="s3">
+{$ds.jj}</span><span   class="s4">
+       
+      {$ds.zz}
+      </span></li>
+
+      
+      
+	
+
+                   
+                 
+
+	{/volist}
+               
+               
+	
+   	{volist name='wx' id='wx'}	
+<li><span class="s1">
+ &nbsp[{$wx.type}]</span><span class="s2">
+      <a href="{:url('admin/Book/txt',['name'=>$wx.name])}">{$wx.name}</a></span><span class="s3">
+ {$wx.jj}</span><span   class="s4">
+     
+      {$wx.zz} 
+      </span></li>
+      
+      
+	
+
+
+	{/volist}
+          	{volist name='mz' id='mz'}	
+
+	<li><span class="s1">
+ &nbsp[{$mz.type}]</span><span class="s2">
+      <a href="{:url('admin/Book/txt',['name'=>$mz.name])}">{$mz.name}</a></span><span class="s3">
+ {$mz.jj}</span><span   class="s4">
+      {$mz.zz}
+      
+      </span></li>
+
+      
+	
+            
+  
+	{/volist}      
+   	{volist name='ls' id='ls'}	
+
+	<li><span class="s1">
+ &nbsp[{$ls.type}]</span><span class="s2">
+      <a href="{:url('admin/Book/txt',['name'=>$ls.name])}">{$ls.name}</a></span><span class="s3">
+ {$ls.jj}</span><span   class="s4">
+      {$ls.zz}
+      
+      </span></li>
+
+      
+	
+            
+  
+	{/volist}
+                </ul>
+                </div>  </div></div>  </div></div>  </div>
+                <div>
+               <div class="footer1">
+	      枫阅读所有小说均来自网上以及网友上传，与本站立场无关版权归原作者和出版社所有。阅读者如发现作品内容确有与法律抵触之处，可向本站举报。倡导文明阅读，绿色网络，从我做起，如发现侵权、非法、色情类小说,发送邮件给:<a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=1764928384@qq.com">管理员</a> 删除！
+</div>  </div>
+	</body>
+</html>

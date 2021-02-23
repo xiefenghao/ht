@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<!-- <link href="__PUBLIC__/css/sc/sc.css" rel="stylesheet" type="text/css" > -->
+	<!-- <link href="__PUBLIC__/css/sc.css" rel="stylesheet" type="text/css" href=""> -->
+<link rel="stylesheet" type="text/css" href="__CSS__/shang.css">
+<body>
+<meta charset="UTF-8"/>
+
+<div class="admin_login_wrap">
+    <h1>书籍上传</h1>{if session('userid')}
+
+{:session('name')}
+
+{/if}
+<a href="{:url('admin/User/index')}"><p class="sy">首页</p></a>
+    <div class="adming_login_border">
+    	 <div class="admin_input">
+
+<form action="bookadd" method="post" enctype="multipart/form-data">
+	<ul class="admin_items">
+                    <li>
+                    	<label for="user">书名：</label>
+<input type="text" id="" value="" name="name" class="admin_input_style" /></li>
+<label for="user">作者：</label>
+<input type="text" id="" value="" name="zz"  class="admin_input_style"/><br>
+<label for="user">类型：</label>
+
+<input   type="radio"   value="都市"    name="type"   >都市
+   <input   type="radio"   value="玄幻"    name="type"   >玄幻
+   <input   type="radio"   value="名著"    name="type"  />名著
+   <input   type="radio"   value="历史"    name="type"   />历史
+   <input   type="radio"   value="学习"    name="type"  />学习
+   <input   type="radio"   value="武侠"    name="type"  /> 武侠   
+<br>
+<label for="user">简介：</label>
+<textarea id="message" name="jj"  class="admin_input_style" /></textarea>
+
+<label for="user">图片：</label>
+<input type="file" name="file[]"  class="admin_input_style"/> <br>
+<label for="user">小说：</label>
+<input type="file" name="file[]" class="admin_input_style"/><br>
+
+				
+	<input type="submit" value="上传" class="btn btn-primary"/>
+	
+	
+</form>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<meta charset="UTF-8"/>
+<link rel="stylesheet" type="text/css" href="__CSS__/login.css">
+
+<div class="admin_login_wrap">
+    <h1>上传新章节</h1>
+    <p>{if session('userid')}
+
+{:session('name')}
+
+{/if}</p>
+<a href="{:url('admin/User/index')}"><p class="sy">首页</p></a>
+    <div class="adming_login_border">
+        <div class="admin_input">
+
+<form action="{:url('admin/User/bidate',['id'=>$data])}"  method="post">
+	<ul class="admin_items">
+                 
+
+<label for="user">内容：</label>
+<textarea id="message" name="text"  class="admin_input_style" /></textarea>
+
+	<input type="submit" value="添加" class="btn btn-primary"/>
+	<!-- <input type="reset" value="重填" class="btn btn-primary" /> -->
+</form>
+
+</body>
+</html>

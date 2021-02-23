@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<meta charset="UTF-8"/>
+<link rel="stylesheet" type="text/css" href="__CSS__/login.css">
+
+<div class="admin_login_wrap">
+    <h1>添加管理员</h1>
+    <p>{if session('userid')}
+
+{:session('name')}
+
+{/if}</p>
+<a href="{:url('admin/User/index')}"><p class="sy">首页</p></a>
+    <div class="adming_login_border">
+        <div class="admin_input">
+
+<form action="insert"  method="post">
+	<ul class="admin_items">
+                    <li>
+                        <label for="user">用户名：</label>
+
+<input type="text" name="name" id="" value="" class="admin_input_style" /> </li>
+ <li>
+                        <label for="user">邮箱：</label>
+
+
+<input type="text" id="" name="email" value="" class="admin_input_style"/></li>
+ <label for="user">密码： </label>
+<input type="password" name="password"  class="admin_input_style"/></li>
+  <label for="user">确认密码：</label>
+<input type="password" name="repassword"  class="admin_input_style"/></li>
+
+	<input type="submit" value="注册" class="btn btn-primary"/>
+	<input type="reset" value="重填" class="btn btn-primary" />
+</form>
+
+</body>
+</html>

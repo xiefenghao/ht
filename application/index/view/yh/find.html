@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<meta charset="UTF-8"/>
+<link rel="stylesheet" type="text/css" href="__CSS__/shang.css">
+<div class="admin_login_wrap">
+    <h1>登陆</h1>
+    <a href="{:url('index/Index/index')}"><p class="sy">首页</p></a>
+    <div class="admin_login_border">
+    	 <div class="admin_input">
+<form action="{:url('index/Yh/findcheck')}" method="post">
+	<label for="user">用户名：</label>
+<input type="text" name="name" id="" value="" class="admin_input_style"/><br />
+<label for="user">邮箱：</label>
+<input type="text" id="" name="email" value="" class="admin_input_style"/><br />
+
+<label for="user">真实姓名：</label><input type="text" name="xm" class="admin_input_style"/><br />
+<label for="user">密码：</label>
+<input type="password" name="password" class="admin_input_style"/><br />
+<label for="user">确认密码：</label>
+<input type="password" name="repassword" class="admin_input_style"/><br />
+
+
+
+	<input type="submit" value="找回" class="btn btn-primary"/>
+	<input type="reset" value="重填" class="btn btn-primary"/>
+</form>
+
+</body>
+</html>

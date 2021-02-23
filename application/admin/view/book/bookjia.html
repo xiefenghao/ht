@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<!-- <link href="__PUBLIC__/css/sc/sc.css" rel="stylesheet" type="text/css" > -->
+	<link rel="stylesheet" type="text/css" href="__CSS__/book.css">
+
+<body>
+<meta charset="UTF-8"/>
+<style type="text/css">
+	body{
+		background-image: url(__STATIC__{$bj});
+	/*	background-size:100% 100%;
+    -moz-background-size:100% 100%;*/
+background-repeat:no-repeat ;
+background-size:100% 100%; 
+
+background-attachment: fixed;" 
+	}
+</style>
+
+</head>
+
+<body>
+	<div class="header">
+		<div id="changeColor1">
+
+{if condition="session('yhid')"}
+<div id="div5" >{:session('name')}</div>
+<div class="titl">
+<a href="{:url('index/Index/tp')}" id="div1">书架背景图片上传</a>
+<a href="{:url('index/Index/delete')}" id="div2">退出</a>
+
+<a href="{:url('index/Index/index')}" id="div3">首页</a>
+
+<a href="{:url('index/Yh/manage',['id'=>session('yhid')])}" id="div4">背景恢复</a>
+
+{elseif condition="session('userid')"}
+<div id="div2">{:session('name')}</div>
+<a href="{:url('admin/User/delete1')}" id="div1" class="tui">退出</a>
+</div>
+{/if}
+</div>
+	</div>
+	<div class="book" >
+	{volist name='data' id='da'}	
+
+	
+<ul><li>
+	{if condition= "$da['image'] neq ''"}
+	<a href="{:url('admin/Book/txt',['name'=>$da.name])}"><img src="{$da.image}"  width="150px" height="150px"><!-- <br /><p>{$da.name}</p> --></a>
+	<a href="{:url('index/Yh/delet',['name'=>session('name'),'bookid'=>$da.id])}"><div class="sc">下架</div></a>
+	{else /}	<a href="{:url('admin/Book/txt',['name'=>$da.name])}"><img src="__STATIC__/1.jpg" width="150px" height="150px"><br /><p>{$da.name}</p></a>
+	<a href="{:url('index/Yh/delet',['name'=>session('name'),'bookid'=>$da.id])}"><div class="sc">下架</div></a>
+{/if}</li>
+</ul>
+
+
+{/volist}
+</div>
+</body>
+</html>

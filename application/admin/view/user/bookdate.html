@@ -1,0 +1,150 @@
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+  <link rel="stylesheet" type="text/css" href="__CSS__/houtai.css">
+ 
+  
+</head>
+<body>
+<div class="topbar-wrap white">
+    <div class="topbar-inner clearfix">
+        <div class="topbar-logo-wrap clearfix">
+            <h1 class="topbar-logo none"><a href="index.html" class="navbar-brand">后台管理</a></h1>
+            <ul class="navbar-list clearfix">
+                <li><a class="on" href="{:url('admin/user/index')}">首页</a></li>
+                <li><a href="{:url('index/Index/index')}" >网站首页</a></li>
+            </ul>
+        </div>
+        <div class="top-info-wrap">
+            <ul class="top-info-list clearfix">
+                <li>{if session('userid')}
+
+{:session('name')}
+
+{/if}
+</li> 
+
+      <li>	<a href="{:url('admin/User/adminup',['id'=>session('userid')])}">修改信息</a></li>
+                <li><a href="{:url('admin/User/delete1')}">退出登陆</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container clearfix">
+    <div class="sidebar-wrap">
+      
+        
+
+        <div class="sidebar-content">
+            <ul class="sidebar-list">
+                <li>
+                   
+                    <ul class="sub-menu">
+                        <li><a href="add">添加管理员</a></li>
+                        <li><a href="{:url('admin/User/show')}">用户管理</a></li>
+                        <li><a href="{:url('admin/User/book')}">书籍管理</a></li>
+                        <li><a href="{:url('admin/User/plun')}">评论管理</a></li>
+                        <li><a href="{:url('admin/Book/shuji')}">书籍查看</a></li>
+                        <li><a href="{:url('admin/Book/index')}">书籍上传</a></li>
+                        <!-- <li><a href="{:url('admin/User/bdsc')}">本地删除</a></li> -->
+           
+                        <li><a href="{:url('admin/User/yhsc')}">用户上传</a></li>
+                      
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+	
+	
+    <div class="main-wrap">
+
+        <div class="crumb-wrap">
+            <div class="crumb-list"><i class="icon-font"></i><a href="{:url('admin/user/index')}">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">管理员管理</span></div>
+        </div>
+       
+        <div class="result-wrap">
+            
+              
+
+	
+
+
+
+                <div class="result-content">
+                    <table class="result-tab" width="100%">
+                    	<tr>
+                      	
+                      	<th	>书籍ID</th>
+	                    <th>书名</th>
+	                       <th>作者</th>
+                            <th>类型</th> <th>简介</th>
+                                 <th>图片</th>
+                                  <th>修改</th>
+                                  
+                        </tr>
+                        <tr>
+                        	
+
+                 <td>{$data.id}</td>
+                 
+                 	<td>{$data.name}</td>
+                 	<td>{$data.zz}	</td>
+                 	<td>{$data.type}</td>
+                 	<td width="20%">{$data.jj}</td>
+                 	<td>{if condition= "$data['image'] neq ''"}
+	<img src="{$data.image}" width="80" height="96">
+	{else /}<img src="__STATIC__/1.jpg" width="80" height="96">
+	{/if}</td>
+
+	     
+                               
+                   
+                          
+      <td><form action="{:url('admin/User/bookup',['id'=>$data.id])}" method="post"  enctype="multipart/form-data">
+	<ul class="admin_items">
+                  
+                    	   <li><label for="user">书名：</label>
+<input type="text" id="" value="" name="name" class="admin_input_style" /></li>
+<label for="user">作者：</label>
+<input type="text" id="" value="" name="zz"  class="admin_input_style"/><br>
+<label for="user">类型：</label>
+
+<input   type="radio"   value="都市"    name="type"   >都市
+   <input   type="radio"   value="玄幻"    name="type"   >玄幻
+   <input   type="radio"   value="名著"    name="type"  />名著
+   <input   type="radio"   value="历史"    name="type"   />历史
+   <input   type="radio"   value="武侠"    name="type"  />武侠
+  
+<br>
+
+<label for="user">简介：</label>
+<textarea id="message" name="jj"  class="admin_input_style" /></textarea>
+<br>
+<label for="user">图片：</label>
+<input type="file" name="image"  class="admin_input_style"/> <br>
+<input type="submit" value="修改" class="btn btn-primary"/>   
+</form>
+                        </tr>
+                        
+                        
+                    </table>
+              
+           
+
+        </div>
+    </div>
+  
+</div>
+</body>
+</html>	
+	
+
+
+
+
+

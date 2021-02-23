@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+
+	<title></title>
+	    <link href="__CSS__/login.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+	
+	<div class="admin_login_wrap">
+    <h1>后台登陆</h1>
+    <p><a href="{:url('index/Index/index')}" >首页</a></p>
+    <div class="adming_login_border">
+        <div class="admin_input">
+<form action="check"  method="post">
+	<ul class="admin_items">
+                    <li>
+<label for="user">用户名：</label>
+<input type="text" name="name" id="" value=""  class="admin_input_style" /><br />
+ </li>
+                    <li>
+<label for="pwd">密码：</label>
+<input type="password" name="password" class="admin_input_style" /><br />
+ </li>
+   <li>
+<label for="pwd">验证码：</label>
+<img onclick="this.src='{:captcha_src()}?'+Math.random()" src="{:captcha_src()}" alt="captcha" style="width: 120px ;float: right;" />
+<input type="text" name="code" class="admin_input_style" /><br />
+ </li>
+                    <li>
+
+	<input type="submit" value="登陆" class="btn btn-primary"/>
+	</li>
+                </ul>
+</form>
+    </div>
+    </div>
+</div>
+</body>
+</html>
