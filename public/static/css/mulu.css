@@ -1,0 +1,159 @@
+﻿/*body{background-color:lightblue;
+}*/
+.clear{clear:both;}
+a:hover {text-decoration:underline; top:-1px;}
+a{color:#6F78A7;text-decoration:none;}
+.nav{background:none repeat scroll 0 0 #88C6E5;height:50px;overflow:hidden;
+	width:980px;margin:10px auto 10px;}
+.nav ul li{float:left;line-height:34px;   overflow: hidden;}
+.nav ul li a{color:#FFF;font-size:15px;font-weight:800;padding:0 50px;}
+.box_con{border:2px solid #88C6E5; overflow:hidden;width:976px;margin:2px auto;}
+.con_top { border-bottom: #88C6E5 1px solid; text-align:left; padding: 0px 10px; line-height:40px; height:40px; background-color:#E1ECED;}
+.con_top #bdshare{float:right;line-height:20px;padding-right:20px;padding-top:9px;text-align:right;}
+
+#sidebar{float:left;width:140px;text-align:left;}
+
+#maininfo{float:right;width:800px;}
+
+#fmimg img{float: left;}
+#info{	padding:10px;margin:10px;font-size:15px;}
+#info h1{font-family:黑体;font-size:28px;font-weight:700;overflow:hidden;margin:auto;padding:1px;}
+#info p{height:25px;line-height:25px;padding-top:2px;width:350px;margin:auto;overflow:hidden;float:left;}
+#intro{	width:96%;overflow:hidden;line-height:150%;border-top:1px dashed #88C6E5;padding:10px;font-size:13px;}
+#intro p{text-indent:2em; margin-top:10px;}
+
+#listtj{width:960px;  padding:5px; float:left;}
+
+
+.con_title{ border-bottom: #88C6E5 1px solid; border-top: #88C6E5 1px solid; text-align:left; padding: 0px 10px; line-height:35px; height:35px; background-color:#C3DFEA;}
+
+.hm-t-body{
+    float: none;clear: none; background: rgb(255,255,255); font: 12px 宋体; height: 190px;overflow: hidden;
+    text-transform: none; color: rgb(85,85,85); text-align: left;transition: none; webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    orphans: auto; widows: 1; 
+}
+.hm-t-list
+{
+    clear: none; overflow: hidden; webkit-tap-highlight-color: rgba(255, 255, 255, 0);padding-left:0px;
+}
+.hm-t-item{
+    clear: none;display: list-item;list-style-position: inside;float: left; margin: 12px 0px 0px; overflow: hidden;width: 122px;text-align: center;
+}
+.hm-t-img{
+    clear: none;border: rgb(206,219,235) 1px solid; text-align: center; overflow: hidden; width: 115px; height: 144px;webkit-tap-highlight-color: rgba(255, 255, 255, 0)
+}
+.hm-t-img img{
+    margin: 0px 0px 0px 0px; overflow: hidden; text-align: center; width: 115px;height: 144px; border:0px;
+}
+
+.hm-t-txt{
+    width:100%;overflow: hidden;text-align: center;font: 12px 宋体; margin-top:5px;text-overflow: ellipsis;text-decoration: none;
+}
+
+.nav1{background:none repeat scroll 0 0 #88C6E5;
+	width:980px;margin:10px auto auto;overflow:hidden}
+.nav1 .mulu{text-align:center;padding-top:20px; }
+.nav1 ul {width:100%;overflow:hidden;list-style-type:none;  }
+.nav1 ul li a{line-height:34px;width:33%;float:left;display: inline-block; white-space: nowrap;overflow: hidden; 
+text-overflow:ellipsis;font-size: 18px;color: black;
+}
+.nav2{background:none repeat scroll 0 0 #88C6E5;
+	width:980px;margin:auto auto -10px;}
+
+.box2 ul {
+  overflow: hidden;
+  margin-left: -10px;
+ list-style-type:none;
+}
+.box2 ul li {
+  width: 13.3333%;
+ 
+  float: left;
+  padding-left: 10px;
+  box-sizing: border-box;
+  margin-bottom: 5px;
+  white-space:nowrap; /*不让文字内容换行*/
+ overflow:hidden;/*文字溢出的部分隐藏起来*/
+ text-overflow:ellipsis;
+}
+.box2 ul li {
+  width: 53.3333%;
+ 
+  float: left;
+  padding-left: 10px;
+  box-sizing: border-box;
+  margin-bottom: 5px;
+  white-space:nowrap; /*不让文字内容换行*/
+ overflow:hidden;/*文字溢出的部分隐藏起来*/
+ text-overflow:ellipsis;
+}
+.box2 .li {
+  width: 23.3333%;
+ 
+  float: left;
+  padding-left: 10px;
+  box-sizing: border-box;
+  margin-bottom: 5px;
+  white-space:nowrap; /*不让文字内容换行*/
+ overflow:hidden;/*文字溢出的部分隐藏起来*/
+ text-overflow:ellipsis;/*用...替代溢出的部分*/
+}
+.box2 ul li .com {
+
+  height: inherit;
+ 
+} 
+.nav3{background:none repeat scroll 0 0 #88C6E5;
+	width:980px;margin:0px auto 20px;}
+	.nav4{background:none repeat scroll 0 0 #88C6E5;
+	width:980px;margin:0px auto 15px;height: 120px;}
+/*.nav1.pielie{float:right;top: 10px;
+}*/
+.shu { width: 100%; }
+.shu a{font-size: 22px;color: black;}
+#fixed { float: left;  margin-left: -100%; }
+.shuma { float: left; width: 100%; }
+.main-inner { margin-left: 100px;  }
+
+.jianjie{ 
+
+	margin-left: 245px;
+	height: 70px;
+	width: 730px;
+
+	transform:translateY(-100px);//向上移动
+	display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp:4 ;
+overflow: hidden;
+	/*overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;*/
+	/*  overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;  // 控制多行的行数
+    -webkit-box-orient: vertical;*/
+
+}.header{height:50px;width:980px;margin:auto;background-color:#B8BFD8;;}
+.header_logo a {background-position：0 -35px; display：block; float：left; height：60px; text-indent：-9999px; width：250px;}
+/*.header_search {float：left; overflow：hidden; width：450px; margin：20px auto auto 30px; }
+.header_search input.txt {border：1px solid＃A6D3E8; font：16px / 22px arial; height：24px; margin-right：5px; width：320px; padding：3px;}
+.header_search input.submit {background：none repeat scroll 0 0 #DDD; cursor：pointer; font-size：14px; height：32px; width：95px;}
+*/
+.header_search input.txt {margin-left: 130px;transform:translateY(-30px);width: 300px;height: 25px;}
+.header_search input.submit {transform:translateY(-30px);}
+.header .feng{font-size: 22px;}
+.header .zhuangtai{transform:translateY(-45px);margin-left: 550px;
+}
+.footer{ background:none repeat scroll 0 0 ;
+  width:980px;margin:auto auto auto;text-align: center;}
+.footer a{color: black;text-decoration:none}
+.pagination{text-align:center;margin-top:5px;margin-bottom: 15px; }
+.pagination li{ height: 30px;/*background:cornflowerblue;*/margin:0px 10px;/* border:1px solid #e6e6e6;*/padding: 3px 5px;display: inline-block;}
+.pagination .active{background-color: #dd1a20;color: #fff;}
+.pagination .disabled{color:#ccc; height: 30px;
+}
+.pagination li a{ height: 30px;font-size: 24px;color: #000000;font-family: "黑体"; }
+.nav7{background:none repeat scroll 0 0 ;
+  width:980px;margin:0px auto 20px;}
